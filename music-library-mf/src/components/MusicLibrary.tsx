@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Song, SortField, GroupByField, SortOrder } from '../types';
+import { Song, SortField, SortOrder } from '../types';
 import { mockSongs } from '../data/mockSongs';
 import { 
   Search, 
@@ -25,7 +25,6 @@ const MusicLibrary: React.FC<MusicLibraryProps> = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [sortField, setSortField] = useState<SortField>('title');
   const [sortOrder, setSortOrder] = useState<SortOrder>('asc');
-  const [groupBy, setGroupBy] = useState<GroupByField | null>(null);
   const [showAddForm, setShowAddForm] = useState(false);
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
   const [songToDelete, setSongToDelete] = useState<Song | null>(null);
@@ -350,7 +349,7 @@ const MusicLibrary: React.FC<MusicLibraryProps> = ({
                   Clear Search
                 </button>
                 <button
-                  onClick={() => setGroupBy(null)}
+                  onClick={() => setSearchTerm('')}
                   className="px-4 py-2 bg-gray-700 text-gray-300 rounded-lg hover:bg-gray-600 transition-colors"
                 >
                   Clear Filters
