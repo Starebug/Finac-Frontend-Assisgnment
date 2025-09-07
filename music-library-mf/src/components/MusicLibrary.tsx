@@ -37,6 +37,7 @@ const MusicLibrary: React.FC<MusicLibraryProps> = ({
     duration: ''
   });
 
+
   const filteredSongs = useMemo(() => {
     return songs.filter(song => 
       song.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
