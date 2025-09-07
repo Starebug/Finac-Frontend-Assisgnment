@@ -29,9 +29,9 @@ const Login: React.FC = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+      <div className="min-h-screen flex items-center justify-center bg-gray-900">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-600 mx-auto mb-4"></div>
           <p className="text-white">Checking authentication...</p>
         </div>
       </div>
@@ -39,14 +39,14 @@ const Login: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 p-4">
-      <div className="max-w-md w-full space-y-8 p-8 bg-white/10 backdrop-blur-sm rounded-2xl shadow-2xl border border-white/20">
+    <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+      <div className="max-w-md w-full space-y-8 p-8 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700">
         <div className="text-center">
-          <div className="mx-auto h-16 w-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-lg">
-            <Music className="h-8 w-8 text-purple-600" />
+          <div className="mx-auto h-16 w-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-4 shadow-lg">
+            <Music className="h-8 w-8 text-white" />
           </div>
           <h2 className="text-3xl font-bold text-white mb-2">Music Library</h2>
-          <p className="text-gray-200">Sign in to access your music collection</p>
+          <p className="text-gray-400">Sign in to access your music collection</p>
         </div>
         
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -64,7 +64,7 @@ const Login: React.FC = () => {
                   name="username"
                   type="text"
                   required
-                  className="appearance-none rounded-lg relative block w-full px-12 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white/90 backdrop-blur-sm"
+                  className="appearance-none rounded-lg relative block w-full pl-6 pr-4 py-3 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-gray-700"
                   placeholder="Username"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
@@ -85,7 +85,7 @@ const Login: React.FC = () => {
                   name="password"
                   type="password"
                   required
-                  className="appearance-none rounded-lg relative block w-full px-12 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-white/90 backdrop-blur-sm"
+                  className="appearance-none rounded-lg relative block w-full pl-6 pr-4 py-3 border border-gray-600 placeholder-gray-400 text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent bg-gray-700"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -95,7 +95,7 @@ const Login: React.FC = () => {
           </div>
 
           {error && (
-            <div className="text-red-400 text-sm text-center">{error}</div>
+            <div className="text-red-400 text-sm text-center bg-red-900 bg-opacity-20 border border-red-800 rounded-lg p-3">{error}</div>
           )}
 
           <div>
@@ -109,11 +109,11 @@ const Login: React.FC = () => {
         </form>
 
         <div className="mt-6">
-          <div className="text-center text-sm text-gray-200 bg-white/10 rounded-lg p-4 backdrop-blur-sm">
-            <p className="mb-2 font-semibold">Demo Credentials:</p>
+          <div className="text-center text-sm text-gray-300 bg-gray-700 rounded-lg p-4 border border-gray-600">
+            <p className="mb-2 font-semibold text-white">Demo Credentials:</p>
             <div className="space-y-1 text-xs">
-              <p className="flex justify-between"><span className="font-medium">Admin:</span> admin / admin123</p>
-              <p className="flex justify-between"><span className="font-medium">User:</span> user / user123</p>
+              <p className="flex justify-between"><span className="font-medium text-gray-300">Admin:</span> <span className="text-gray-400">admin / admin123</span></p>
+              <p className="flex justify-between"><span className="font-medium text-gray-300">User:</span> <span className="text-gray-400">user / user123</span></p>
             </div>
           </div>
         </div>
